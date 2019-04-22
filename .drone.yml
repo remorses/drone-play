@@ -6,5 +6,5 @@ steps:
 - name: test
   image: python:3.7-alpine
   commands:
-  - pip install flask
+  - pip install flask rx
   - pytest
