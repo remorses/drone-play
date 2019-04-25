@@ -1,4 +1,20 @@
 
+---
+
+kind: pipeline
+name: first
+
+steps:
+- name: test_a_1
+  image: python:3.7-alpine
+  commands:
+  - echo -n ciaooooo_
+  - echo come va?
+  when:
+    changeset:
+      includes: [ test* ]
+
+---
 
 kind: pipeline
 name: second
