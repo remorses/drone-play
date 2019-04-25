@@ -1,6 +1,6 @@
 
 kind: pipeline
-name: default
+name: first
 
 steps:
 - name: test
@@ -8,6 +8,20 @@ steps:
   commands:
   - pip install flask pytest
   - pytest
+  when:
+    changeset:
+      includes: [ test* ]
+---
+
+kind: pipeline
+name: second
+
+steps:
+- name: test
+  image: python:3.7-alpine
+  commands:
+  - echo -n ciaooooo_
+  - echo come va?
   when:
     changeset:
       includes: [ test* ]
