@@ -7,11 +7,13 @@ steps:
 - name: test_a_1
   image: python:3.7-alpine
   commands:
-  - echo -n ciaooooo_
+  - echo $DRONE_REMOTE_URL
+  - echo $DRONE_GIT_HTTP_URL
+  - echo $DRONE_GIT_SSH_URL
   - echo come va?
   when:
     changeset:
-      includes: [ test* ]
+      includes: [ test*, *.yml]
 
 ---
 
