@@ -1,2 +1,3 @@
 def ciao():
-  pass
+  return
+
