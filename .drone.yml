@@ -8,3 +8,6 @@ steps:
   commands:
   - pip install flask pytest
   - pytest
+  when:
+    changeset:
+      includes: [ test* ]
