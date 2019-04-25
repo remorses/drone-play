@@ -13,7 +13,9 @@ steps:
   - echo come va?
   when:
     changeset:
-      includes: [ test*, *.yml]
+      includes:
+        - "test*"
+        - "*.yml"
 
 ---
 
