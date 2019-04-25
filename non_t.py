@@ -1,5 +1,2 @@
 def ciao():
   pass
-
-
-
