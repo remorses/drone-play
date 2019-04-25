@@ -3,7 +3,7 @@ kind: pipeline
 name: first
 
 steps:
-- name: test
+- name: test_a_1
   image: python:3.7-alpine
   commands:
   - pip install flask pytest
@@ -17,11 +17,19 @@ kind: pipeline
 name: second
 
 steps:
-- name: test
+- name: test_b_1
   image: python:3.7-alpine
   commands:
   - echo -n ciaooooo_
   - echo come va?
+  when:
+    changeset:
+      includes: [ test* ]
+- name: test_b_2
+  image: python:3.7-alpine
+  commands:
+  - echo -n ciaooooo_
+  - echo come stai?
   when:
     changeset:
       includes: [ test* ]
