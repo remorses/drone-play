@@ -1,17 +1,4 @@
----
-kind: pipeline
-name: first
 
-steps:
-- name: test_a_1
-  image: python:3.7-alpine
-  commands:
-  - pip install flask pytest
-  - pytest
-  when:
-    changeset:
-      includes: [ test* ]
----
 
 kind: pipeline
 name: second
